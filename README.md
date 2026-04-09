@@ -141,6 +141,19 @@ class Error extends ApiResponse {
   final String errorMessage;
   Error(this.errorMessage);
 }
+
+void main() {
+  ApiResponse response1 = Success("Data berhasil diambil");
+  ApiResponse response2 = Error("Terjadi kesalahan");
+
+  if (response1 is Success) {
+    print("Success: ${response1.message}");
+  }
+
+  if (response2 is Error) {
+    print("Error: ${response2.errorMessage}");
+  }
+}
 </pre>
 
 <p><b>Output VS Code:</b></p>
@@ -163,77 +176,5 @@ void handleResponse(ApiResponse response) {
 </pre>
 
 <p><b>Output VS Code:</b></p>
-<img class="output-img" src="ss-handle.png">
+<img class="output-img" src="ss-sealed.png" alt="Output Handle">
 </div>
-
-<!-- ================= SLIDE 8 ================= -->
-<div class="section">
-<h2>Slide 8 - Base Class</h2>
-
-<pre>
-base class Animal {
-  void speak(){}
-}
-</pre>
-
-<p><b>Output VS Code:</b></p>
-<img class="output-img" src="ss-base.png">
-</div>
-
-<!-- ================= SLIDE 9 ================= -->
-<div class="section">
-<h2>Slide 9 - Contoh Base Class</h2>
-
-<pre>
-class Dog extends Animal {
-  void speak() {
-    print("Woof!");
-  }
-}
-</pre>
-
-<p><b>Output VS Code:</b></p>
-<img class="output-img" src="ss-dog.png">
-</div>
-
-<!-- ================= SLIDE 10 ================= -->
-<div class="section">
-<h2>Slide 10 - Final Class</h2>
-
-<pre>
-final class Settings {
-  final String theme;
-  final int fontSize;
-
-  Settings({required this.theme, required this.fontSize});
-
-  void showSettings() {
-    print("Theme: ${theme}");
-  }
-}
-</pre>
-
-<p><b>Output VS Code:</b></p>
-<img class="output-img" src="ss-final.png">
-</div>
-
-<!-- ================= BONUS ================= -->
-<div class="section">
-<h2>Bonus (Slide 19)</h2>
-
-<pre>
-base class Repository {
-  void create() {}
-  void read() {}
-  void update() {}
-  void delete() {}
-}
-</pre>
-
-<p><b>Output VS Code:</b></p>
-<img class="output-img" src="ss-bonus.png">
-</div>
-
-</div>
-</body>
-</html>
