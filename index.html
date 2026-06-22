@@ -725,40 +725,40 @@
                     <div class="mermaid">
                         %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#22d3ee', 'primaryTextColor': '#fff', 'primaryBorderColor': '#a855f7', 'lineColor': '#94a3b8', 'secondaryColor': '#1e293b', 'tertiaryColor': '#0f172a', 'background': '#020617' }}}%%
                         graph TD
-                            A(🚀 MULAI) --> B[⚙️ Inisialisasi Sistem]
-                            B --> C[🖥️ Tampilkan Dashboard]
-                            C --> D{❓ Pilih Aksi}
+                            A( MULAI) --> B[ Inisialisasi Sistem]
+                        B --> C[ Tampilkan Dashboard]
+                        C --> D{ Pilih Aksi}
 
-                            D -->|Tambah Barang| E[📝 Input Data]
-                            E --> F{❓ Kode unik?}
-                            F -->|✅ Ya| G[✅ Simpan &amp; Tampilkan]
-                            F -->|❌ Tidak| H[⚠️ Error: Duplikat]
-                            G --> I[↻ Kembali ke Dashboard]
-                            H --> I
+                        D -->|Tambah Barang| E[ Input Data]
+                        E --> F{ Kode unik?}
+                        F -->| Ya| G[ Simpan &amp; Tampilkan]
+                        F -->| Tidak| H[ Error: Duplikat]
+                        G --> I[↻ Kembali ke Dashboard]
+                        H --> I
 
-                            D -->|Pilih Barang| J[🎯 Pilih Barang]
-                            J --> K[📋 Detail Barang]
-                            K --> L{❓ Aksi}
+                        D -->|Pilih Barang| J[ Pilih Barang]
+                        J --> K[ Detail Barang]
+                        K --> L{ Aksi}
 
-                            L -->|📥 Tambah Stok| M[📥 Input Jumlah]
-                            M --> N[🔄 Update Stok]
-                            N --> I
+                        L -->| Tambah Stok| M[ Input Jumlah]
+                        M --> N[ Update Stok]
+                        N --> I
 
-                            L -->|📤 Kurangi Stok| O[📤 Input Jumlah]
-                            O --> P{❓ Stok cukup?}
-                            P -->|✅ Ya| Q[🔄 Update Stok]
-                            P -->|❌ Tidak| R[⚠️ Stok habis]
-                            Q --> I
-                            R --> I
+                        L -->| Kurangi Stok| O[ Input Jumlah]
+                        O --> P{ Stok cukup?}
+                        P -->| Ya| Q[ Update Stok]
+                        P -->| Tidak| R[ Stok habis]
+                        Q --> I
+                        R --> I
 
-                            L -->|🗑️ Hapus| S{❓ Konfirmasi?}
-                            S -->|✅ Ya| T[🗑️ Hapus]
-                            S -->|❌ Batal| I
-                            T --> I
+                        L -->| Hapus| S{ Konfirmasi?}
+                        S -->| Ya| T[ Hapus]
+                        S -->| Batal| I
+                        T --> I
 
-                            I --> C
-                            C -.->|loop| D
-                            C --> U(🏁 SELESAI)
+                        I --> C
+                        C -.->|loop| D
+                        C --> U( SELESAI)
                     </div>
                 </div>
                 <div class="copy-section">
@@ -823,33 +823,31 @@
                         }}}%%
 
                         graph TD
-                            A["🚀 MULAI"] --> B["📂 Inisialisasi Data"]
-                            B --> C["🏭 Buat Objek Barang x5"]
-                            C --> D["📋 Tampilkan Daftar Barang"]
-                            D --> E["📥 Transaksi Barang Masuk"]
+                        A["MULAI"] --> B["Inisialisasi Data"]
+                        B --> C["Buat Objek Barang x5"]
+                        C --> D["Tampilkan Daftar Barang"]
+                        D --> E["Transaksi Barang Masuk"]
 
-                            E --> F{"❓ Barang ditemukan?"}
+                        E --> F{"Barang ditemukan?"}
 
-                            F -->|✅ Ya| G["➕ tambahStok()"]
-                            F -->|❌ Tidak| H["⚠️ Error: Tidak ditemukan"]
+                        F -->|Ya| G["tambahStok()"]
+                        F -->|Tidak| H["Error: Tidak ditemukan"]
 
-                            G --> I["📝 Catat Riwayat"]
-                            H --> J["📤 Transaksi Barang Keluar"]
+                        G --> I["Catat Riwayat"]
+                        I --> J["Transaksi Barang Keluar"]
+                        H --> J
 
-                            I --> J
+                        J --> K{"Stok mencukupi?"}
 
-                            J --> K{"❓ Stok mencukupi?"}
+                        K -->|Ya| L["kurangiStok()"]
+                        K -->|Tidak| M["Error: Stok tidak cukup"]
 
-                            K -->|✅ Ya| L["➖ kurangiStok()"]
-                            K -->|❌ Tidak| M["⚠️ Error: Stok tidak cukup"]
+                        L --> N["Catat Riwayat"]
+                        N --> O["Hitung Stok Akhir"]
+                        M --> O
 
-                            L --> N["📝 Catat Riwayat"]
-                            M --> O["📊 Hitung Stok Akhir"]
-
-                            N --> O
-
-                            O --> P["🖥️ Tampilkan Output"]
-                            P --> Q["🏁 SELESAI"]
+                        O --> P["Tampilkan Output"]
+                        P --> Q["SELESAI"]</code>
                     </div>
                 </div>
                 <div class="copy-section">
